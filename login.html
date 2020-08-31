@@ -59,10 +59,13 @@
   </div>
     </form>
     <br>
-
+  
     <script> function sumar() {
       localStorage.setItem('contador', 1);
       window.location.href= 'index.html';
+      
+      var usuario= document.getElementById("inputEmail")
+      localStorage.setItem("email", usuario.value);
     }
   </script>
 
