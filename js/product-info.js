@@ -5,20 +5,44 @@ function showGallery(array){
 
     let htmlContentToAppend = "";
 
-    for(let i = 0; i < array.length; i++){
-        let imageSrc = array[i];
+    let images = {
+            img1: array[0],
+            img2: array[1],
+            img3: array[2],
+            img4: array[3],
+            img5: array[4],
+    }
 
         htmlContentToAppend += `
-        <div class="col-lg-3 col-md-4 col-6">
-            <div class="d-block mb-4 h-100">
-                <img class="img-fluid img-thumbnail" src="` + imageSrc + `" alt="">
-            </div>
-        </div>
+
+        <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <img src="` + images.img1 + `" class="d-block w-100" alt="...">
+    </div>
+    <div class="carousel-item">
+      <img src="` + images.img2 + `" class="d-block w-100" alt="...">
+    </div>
+    <div class="carousel-item">
+      <img src="` + images.img3 + `" class="d-block w-100" alt="...">
+    </div>
+  </div>
+  
+  <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="sr-only">Previous</span>
+  </a>
+  <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="sr-only">Next</span>
+  </a>
+</div>
+
         `
 
-        document.getElementById("productGallery").innerHTML = htmlContentToAppend;
+        document.getElementById("carouselExampleControls").innerHTML = htmlContentToAppend;
     }
-}
+
 
 document.addEventListener("DOMContentLoaded", function(e){
     getJSONData(PRODUCT_INFO_URL).then(function(resultObj){
@@ -59,12 +83,11 @@ let relatedProd ="";
         var prodTemp = prodAll[pos]
 
         relatedProd +=`
-            
-            <div class="col-lg-3 col-md-4 col-6">
-            <div class="d-block mb-4 h-100">
-                <img class="img-fluid img-thumbnail" src="`+ prodTemp.imgSrc +`" alt="">
-                </div>
-          </div>
+        <div class="col-lg-3 col-md-4 col-6">
+        <div class="d-block mb-4 h-100">
+            <img class="img-fluid img-thumbnail" src="`+ prodTemp.imgSrc +`" alt="">
+            </div>
+         </div>
           `
             
         document.getElementById("relatedProduct").innerHTML = relatedProd;
