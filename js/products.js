@@ -1,7 +1,7 @@
 const ORDER_ASC_BY_COST = "+-"; //variable productos en orden ascendente
-const ORDER_DESC2_BY_COST = "$-+"; //variable productos en orden ascendente
-const ORDER_BY_PROD_COUNT = "Relevancia";
-var currentProductsArray = [];
+const ORDER_DESC2_BY_COST = "$-+"; //variable productos en orden descendente
+const ORDER_BY_PROD_COUNT = "Relevancia"; //variable productos en orden desendente de acuerdo a soldCount
+var currentProductsArray = []; 
 var currentSortCriteria = undefined;
 var minCount = undefined;
 var maxCount = undefined;
