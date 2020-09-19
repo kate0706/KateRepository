@@ -17,14 +17,18 @@
 
 <body>
   <nav class="site-header sticky-top py-1 bg-dark">
-    <div class="container d-flex flex-column flex-md-row justify-content-between">
-      <a class="py-2 d-none d-md-inline-block" href="index.html">Inicio</a>
-      <a class="py-2 d-none d-md-inline-block" href="categories.html">Categorías</a>
-      <a class="py-2 d-none d-md-inline-block" href="products.html">Productos</a>
-      <a class="py-2 d-none d-md-inline-block" href="sell.html">Vender</a>
-      <a class="py-2 d-none d-md-inline-block" href="cart.html">Mi carrito</a>
-      <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="true"> <span id="p1" class="nav-label">Usuario</span> <span class="caret"></span></a>
+      <div class="container d-flex flex-column flex-md-row justify-content-between">
+        <a class="py-2 d-none d-md-inline-block" href="index.html">Inicio</a>
+        <a class="py-2 d-none d-md-inline-block" href="categories.html">Categorías</a>
+        <a class="py-2 d-none d-md-inline-block" href="products.html">Productos</a>
+        <a class="py-2 d-none d-md-inline-block" href="sell.html">Vender</a> 
+        <li class="py-2 d-none d-md-inline-block" class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="true"> <span id="p1" class="nav-label">
+          <script>document.write(localStorage.getItem("email"))</script>
+          </span> <span class="caret"></span></a>
           <ul class="dropdown-menu">
+            <li style="padding: 0px 20px 0px 30px"><a href="my-profile.html">Mi perfil</a></li>
+              <li style="padding: 0px 20px 0px 30px"><a href="cart.html">Mi carrito</a></li>
               <li style="padding: 0px 20px 0px 30px" id="cerrarsesion" onclick="deleteItems()"><a href="#">Cerrar sesión</a></li>
           </ul>
         </li>
@@ -71,7 +75,7 @@
 
         <dt>Imágenes ilustrativas</dt>
         <dd>
-          <div class="row text-center text-lg-left pt-2" id="productGallery">
+          <div id="carouselExampleControls" class="carousel slide">
         </dd>
       </dl>
 
@@ -103,16 +107,6 @@
     </select>
       <input type="submit" value="Enviar" class="btn btn-primary"><br><br>
     </form>
-
-
-
-
-    <div class="card" style="width: 18rem;">
-      <div class="card-body h-25 d-inline-block" style="width: 300px">
-      <h5 class="card-title"></h5>
-      <p class="card-text"></p>
-      
-       </div>
       </div>
      
      <a type="button" class="btn btn-light btn-lg btn-block" href="products.html">Ver productos</a>
