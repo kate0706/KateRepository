@@ -1,4 +1,4 @@
-var shippingPercentage = 0;
+var shippingPercentage = 0.15;
 let PERCENTAGE_SYMBOL = '%';
 
 function articlesWrapper(array) {
@@ -12,7 +12,7 @@ function articlesWrapper(array) {
     <tr>
             <td>  <img  src="`+ array.articles[i].src + `  " height="50" ></img>    </td>
             <td>   ` + array.articles[i].name + `  </td>
-            <td>  <input type="number" class="form-control" id="prueba`+ [i + 1] + `" placeholder=" " required="" value="` + array.articles[i].count + `" min="0" onchange="update()" >    </td>
+            <td>  <input type="number" class="form-control" id="cant`+ [i + 1] + `" placeholder=" " required="" value="` + array.articles[i].count + `" min="0" onchange="update()" >    </td>
             <td> `+ array.articles[i].unitCost + ` ` + array.articles[i].currency + `</td>
             <td id="subtotal`+ [i + 1] + `">   </td>
     </tr>
@@ -22,21 +22,17 @@ function articlesWrapper(array) {
 
     }
 }
-//Prueba dolares sin terminar!
+//Prueba si uso mas elementos, calcular subtotal solo pesos
 
 function update() {
     var subtotal = 0;
 
     for (let i = 0; i < total.articles.length; i++) {
 
-        var a = 1;
-
-        if (total.articles[i].currency == "USD") {
-            a = 40;
-        }
+        let a = 1;
 
         var unitCost = total.articles[i].unitCost;
-        var cantidad = document.getElementById("prueba" + [i + 1]).value;
+        var cantidad = document.getElementById("cant" + [i + 1]).value;
 
         var itemPrice = (cantidad * unitCost)
         subtotal += itemPrice;
@@ -46,16 +42,16 @@ function update() {
 
     //Ultimo Box Total
 
-    let unitProductCostHTML = document.getElementById("productCostText");
-    let comissionCostHTML = document.getElementById("comissionText");
-    let totalCostTextHTML = document.getElementById("totalCostText");
+    let subtotalCostHTML = document.getElementById("subtotalCost");
+    let shippingCostHTML = document.getElementById("shippingCost");
+    let totalCostTextHTML = document.getElementById("totalCost");
 
-    let comissionToShow = shippingPercentage * subtotal;
-    let unitCostToShow = subtotal;
+    let shippingToShow = shippingPercentage * subtotal;
+    let subtotalToShow = subtotal;
     let totalCostTextToShow = shippingPercentage * (subtotal) + (subtotal);
 
-    comissionCostHTML.innerHTML = comissionToShow;
-    unitProductCostHTML.innerHTML = unitCostToShow;
+    shippingCostHTML.innerHTML = shippingToShow;
+    subtotalCostHTML.innerHTML = subtotalToShow;
     totalCostTextHTML.innerHTML = totalCostTextToShow;
 
 }
