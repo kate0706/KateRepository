@@ -1,4 +1,4 @@
-var shippingPercentage = 0.15;
+var shippingPercentage = 0;
 let PERCENTAGE_SYMBOL = '%';
 
 function articlesWrapper(array) {
