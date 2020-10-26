@@ -14,9 +14,8 @@ function articlesWrapper(array) {
             <td>  <input type="number" class="form-control" id="cant`+ [i + 1] + `" placeholder=" " required="" value="` + array.articles[i].count + `" min="0" onchange="update()" >    </td>
             <td> `+ array.articles[i].unitCost + ` ` + array.articles[i].currency + `</td>
             <td id="subtotal`+ [i + 1] + `">   </td>
-            <td <p>
-            <button type="button" class="btn btn-danger" btn-xs">Eliminar</button>
-          </p> </td>
+            <td>
+            <button onclick="Eliminar fila(`+i+`)" type="button" class="btn btn-danger" btn-xs">Eliminar</button></td>
     </tr>
       
     `
@@ -25,6 +24,8 @@ function articlesWrapper(array) {
     }
 }
 //Prueba si uso mas elementos, calcular subtotal solo pesos
+
+
 
 function update() {
     var subtotal = 0;
