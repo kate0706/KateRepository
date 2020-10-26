@@ -1,5 +1,4 @@
-var shippingPercentage = 0.15;
-let PERCENTAGE_SYMBOL = '%';
+var shippingPercentage = 0;
 
 function articlesWrapper(array) {
     htmlContentToAppend = "";
@@ -15,6 +14,9 @@ function articlesWrapper(array) {
             <td>  <input type="number" class="form-control" id="cant`+ [i + 1] + `" placeholder=" " required="" value="` + array.articles[i].count + `" min="0" onchange="update()" >    </td>
             <td> `+ array.articles[i].unitCost + ` ` + array.articles[i].currency + `</td>
             <td id="subtotal`+ [i + 1] + `">   </td>
+            <td <p>
+            <button type="button" class="btn btn-danger" btn-xs">Eliminar</button>
+          </p> </td>
     </tr>
       
     `
