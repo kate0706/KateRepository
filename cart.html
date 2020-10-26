@@ -89,7 +89,7 @@
         <h5 class="mb-3">Tipo de envío</h5>
             <div class="d-block my-3">
               <div class="custom-control custom-radio">
-                    <input id="premiumradio" name="publicationType" type="radio" class="custom-control-input" checked="" required="">
+                    <input id="premiumradio" name="publicationType" type="radio" class="custom-control-input" required="">
                     <label class="custom-control-label" for="premiumradio">Premium 2 a 5 días (15%)</label>
             </div>
               <div class="custom-control custom-radio">
@@ -111,11 +111,11 @@
                 <div class="row">
                   <div class="col-md-6 mb-3">
                     <label>Calle</label>
-                    <input type="text" id="inputCalle" class="form-control" placeholder="Escriba su calle" value="" >
+                    <input type="text" id="inputCalle" class="form-control" placeholder="Escriba su calle" value="" required>
                     <label>Número</label>
-                    <input type="number" id="inputNumero" class="form-control" placeholder="Escriba el número" value="" >
+                    <input type="number" id="inputNumero" class="form-control" placeholder="Escriba el número" value="" required>
                     <label>Esquina</label>
-                    <input type="text" id="inputEsquina" class="form-control" placeholder="Escriba la esquina" value="" >
+                    <input type="text" id="inputEsquina" class="form-control" placeholder="Escriba la esquina" value=""required>
                   </div>
                 </div>
         </div>
@@ -130,41 +130,105 @@
         <h6 class="my-0">SubTotal</h6>
             <small class="text-muted">Costo unitario del producto por cantidad</small>
             </div>
-            <span class="text-muted" id="productCostText">-</span>
+            <span class="text-muted" id="subtotalCost">-</span>
             </li>
             <li class="list-group-item d-flex justify-content-between lh-condensed">
             <div>
           <h6 class="my-0">Costo de envío</h6>
             <small class="text-muted">Según el tipo de envío</small>
             </div>
-          <span class="text-muted" id="comissionText">-</span>
+          <span class="text-muted" id="shippingCost">-</span>
             </li>
             <li class="list-group-item d-flex justify-content-between">
             <span>Total ($)</span>
-            <strong id="totalCostText">-</strong>
+            <strong id="totalCost">-</strong>
           </li>
           </ul>
           <div class="row">
             <div class="col-md-8 order-md-1">
             <hr class="mb-4">
               <h4 class="mb-3">Forma de pago</h4>
-              <p>No ha seleccionado</p>
-              <button type="button" class="m-1 btn btn-link">Seleccionar</button>
-          <hr class="mb-4">
-            <button class="btn btn-primary btn-lg" type="submit">Finalizar compra</button>
-      </div>
-   </div>
-  </div>
-        </form>
-    <div class="row">
-      <div class="list-group" id="cat-list-container">
-       </div>
-    </div>
-  </div>
-  <div id="spinner-wrapper"><div class="lds-ring"><div></div><div></div><div></div><div></div></div></div>
-<footer class="text-muted">
-</footer>
 
+        <!-- Button trigger modal -->
+        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#staticBackdrop">Seleccionar
+        </button>
+        <p></p>
+
+        <!-- Modal -->
+        <div class="modal fade" id="staticBackdrop" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="staticBackdropLabel"><strong>Forma de Pago</strong></h5>
+                <button id="" type="button" class="close" data-dismiss="modal" aria-label="Close"></button>
+                <span aria-hidden="true">&times;</span>
+              </div>
+              <div class="modal-body">
+                <div class="custom-control custom-radio">
+                  <input type="radio" class="custom-control-input" required="">
+                  <label class="custom-control-label"></label>Tarjeta de crédito:</label>
+          </div>
+                <div class="d-block my-3">
+                <form action="#" class="credit-card-div">
+                  <div class="panel panel-default" >
+                   <div class="panel-heading">
+                        <div class="row ">
+                                <div class="col-md-12">
+                                    <input type="number" class="form-control" placeholder="Número de Tarjeta" checked="" required>
+                                </div>
+                            </div>
+                            <br>
+                         <div class="row ">
+                                <div class="col-md-3 col-sm-3 col-xs-3">
+                                    <span class="help-block text-muted small-font" > Vencimiento</span>
+                                    <input type="number" class="form-control" placeholder="MM/AA"required="">
+                                </div>
+                                <div class="col-md-3 col-sm-3 col-xs-3">
+                                    <span class="help-block text-muted small-font" required="">  CCV</span>
+                                    <input type="number" class="form-control" placeholder="CCV" required="">
+                                </div>
+                            </div>
+                            <br>
+                        <div class="row ">
+                                <div class="col-md-12 pad-adjust">
+                                    <input type="text" class="form-control" placeholder="Nombre del titular" required="">
+                                </div>
+                            </div>
+                       <div class="row">
+                       <div class="col-md-12 pad-adjust">
+                       <div class="checkbox">
+                        <label>
+                        <input type="checkbox" checked class="text-muted"> Desea guardar los datos para pagos futuros? <a href="#"></a>
+                      </label>
+                        </div>
+                      </div>
+                       </div>
+                      </div>
+                      </div>
+                      </div>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+                <button type="submit" class="btn btn-primary">Aceptar</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </form>
+    <div class="mb-4">
+          <button class="btn btn-primary btn-lg" type="submit">Finalizar compra</button>
+          </div>
+          </div>
+          </div>
+        </div>
+            <div class="row">
+              <div class="list-group" id="cat-list-container">
+              </div>
+            </div>
+          </div>
+          <div id="spinner-wrapper"><div class="lds-ring"><div></div><div></div><div></div><div></div></div></div>
+        <footer class="text-muted">
+        </footer>
   <script src="js/jquery-3.4.1.min.js"></script>
   <script src="js/bootstrap.bundle.min.js"></script>
   <script src="js/dropzone.js"></script>
