@@ -53,26 +53,22 @@ function showProductsList(){
             ( (desProd.indexOf(text)) !== -1 || (nombreProd.indexOf(text)) !== -1) //El método indexOf()devuelve el índice, dentro del objeto String que realiza la llamada, de la primera ocurrencia del valor especificado, comenzando la búsqueda desde indiceDesde; o -1 si no se encuentra dicho valor.
             ){
 
-            htmlContentToAppend += `
-            <a href="product-info.html" class="list-group-item list-group-item-action">
-                <div class="row">
-                    <div class="col-3">
-                        <img src="` + category.imgSrc + `" alt="` + category.description + `" class="img-thumbnail">
-                    </div>
-                    <div class="col">
-                        <div class="d-flex w-100 justify-content-between">
-                            <h4 class="mb-1">`+ category.name +`</h4>
-                            <small class="text-muted">` + category.currency + ": " + category.cost + ` </small>
+                htmlContentToAppend += `
+
+                <div class="col-md-4">
+                    <a href="product-info.html" class="card mb-4 shadow-sm custom-card">
+                    <img class="bd-placeholder-img card-img-top" src="` + category.imgSrc + `">
+                    <hr>
+                      <h4 class="m-3">`+ category.name +`</h4>
+                      <div class="card-body">
+                        <p class="card-text">` + category.currency + ": " + category.cost + ` </p>
+                        <small class="card-text">` + category.soldCount + ` artículos vendidos</small>
+                        <p class="card-text">` + category.description + `</p>
                         </div>
-                        <div class="d-flex w-100 justify-content-between">
-                            <h4 class="mb-1"></h4>
-                            <small class="text-muted">` + category.soldCount + ` artículos vendidos</small>
-                        </div>
-                        <p class="mb-1">` + category.description + `</p>
-                    </div>
+                    </a>
                 </div>
-            </a>
-            `
+                </div>
+                `
         }
         document.getElementById("cat-list-container").innerHTML = htmlContentToAppend;
     }
