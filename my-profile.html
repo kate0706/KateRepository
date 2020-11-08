@@ -56,29 +56,50 @@
           window.location.href="login.html";
         }       
         </script>
-
     </div>
   </nav>
-  <div class="container p-5">
-    <div class="alert alert-danger" role="alert" style="position: relative; width:auto; top: 0;">
-      <h4 class="alert-heading">¡A trabajar! :)</h4>
-      <p>Esta sección corresponde a: Entrega 7 (Fecha de entrega: 8/11/202020) -> Punto 1 y 2.</p>
-      <hr>
-      <p class="mb-0">Para saber qué debes hacer, fijate en la actividad en CREA correspondiente a esta entrega.</p>
+    <div class="text-center p-4">
+      <h2>Perfil:
+      <script>document.write(localStorage.getItem("email"))</script></h2>
     </div>
+    <div>
+      <h4 class="mb-3">Editar información:</h4>
+      <form  id="editarPerfil">
+        <div class="container">
+        <div class="row">
+          <div class="col">
+            <label for="nombres">
+            <input style="width: 400px" type="text" id="nombres" class="form-control" placeholder="Nombres"  required>
+            </label>
+          </div>
+            <div class="col">
+            <label for="apellidos">
+            <input style="width: 400px" type="text" id="apellidos" class="form-control" placeholder="Apellidos" required>
+            </label>
+            </div>
+            <div class="col">
+            <label for="usuario">
+            <input style="width: 400px" type="text" id="usuario" class="form-control" value="" required>
+            </label>
+          </div>
+          <div class="col">
+            <label for="telefono">
+            <input style="width: 400px" type="number" id="telefono" class="form-control" placeholder="Teléfono" value=""required>
+            </label>
+          </div>
+          <div class="col">
+            <label for="edad">
+            <input style="width: 300px" type="number" id="edad" class="form-control" placeholder="Edad" value=""required>
+            </label>
+          </div>
+          </div>
+          </form>
+          <br>
+          <button class="btn btn-primary" type="submit"onclick="savePerfil()" id="updatePerfil">Guardar cambios</button>
+        </div>
   </div>
-  <footer class="text-muted bg-light">
-    <div class="container">
-      <p>Este sitio forma parte de Desarrollo Web - JAP - 2020</p>
-      <p>Clickea <a target="_blank" href="Letra.pdf">aquí</a> para descargar la letra del obligatorio.</p>
-    </div>
-  </footer>
-  <div class="alert fade alert-success" role="alert" id="alertResult">
-    <span id="resultSpan"></span>
-    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-      <span aria-hidden="true">&times;</span>
-    </button>
-  </div>
+
+
   <div id="spinner-wrapper">
     <div class="lds-ring">
       <div></div>
@@ -92,6 +113,8 @@
   <script src="js/dropzone.js"></script>
   <script src="js/init.js"></script>
   <script src="js/my-profile.js"></script>
+
+
 </body>
 
 </html>
